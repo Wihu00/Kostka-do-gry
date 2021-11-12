@@ -7,6 +7,7 @@ body {
 .dot {
     width: 40px;
     height: 40px;
+    margin: 5px;
     background-color: black;
     border-radius: 100%;
     display: block;
@@ -40,14 +41,14 @@ button#random {
   width: 200px;
   height: 200px;
   perspective: 400px;
+  transform: scale(.8);
 }
 
-.cube {
+#cube {
   width: 200px;
   height: 200px;
   position: relative;
   transform-style: preserve-3d;
-  transform: translateZ(-100px);
   transition: transform 1s;
 }
 
@@ -56,15 +57,8 @@ button#random {
     height: 200px;
     position: absolute;
     background: rgb(255, 255, 255);
-    border: 1px solid rgb(0, 0, 0);
+    padding: 25px;
 }
-
-.cube.show-1 { transform: translateZ(-100px) rotateY(0deg);}
-.cube.show-2 { transform: translateZ(-100px) rotateY(-90deg);}
-.cube.show-3 { transform: translateZ(-100px) rotateY(-180deg);}
-.cube.show-4 { transform: translateZ(-100px) rotateY(90deg);}
-.cube.show-5 { transform: translateZ(-100px) rotateX(-90deg);}
-.cube.show-6 { transform: translateZ(-100px) rotateX(90deg);}
 
 .cube_face_1 { transform: rotateY(0deg) translateZ(100px);}
 .cube_face_2 { transform: rotateY( 90deg) translateZ(100px);}
@@ -73,17 +67,18 @@ button#random {
 .cube_face_5 { transform: rotateX(90deg) translateZ(100px);}
 .cube_face_6 { transform: rotateX(-90deg) translateZ(100px);}
 
+/*DOT POSITIONING*/
 .cube_face_1 {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
 
 .cube_face_2 {
     display: flex ;
     justify-content: space-between;
 }
-.cube_face_2 .dot:nth-of-type(2) {
+.cube_face_2 .dot:nth-of-type(1) {
     align-self: flex-end;
 }
 
@@ -110,27 +105,4 @@ button#random {
 
 .cube_face_5 .column:nth-of-type(2) {
     justify-content: center;
-}
-
-
-.cube_face_4 .column , .cube_face_6 .column {
-    margin: 25px;
-}
-.cube_face_2 .dot {
-    margin: 25px;
-}
-.cube_face_3 .dot:nth-of-type(1), .cube_face_3 .dot:nth-of-type(3) {
-    margin: 20px;
-}
-.cube_face_5 .column:nth-of-type(1) .dot:nth-of-type(1) {
-    margin: 25px 0px 0px 25px;
-}
-.cube_face_5 .column:nth-of-type(1) .dot:nth-of-type(2) {
-    margin: 0px 0px 25px 25px;
-}
-.cube_face_5 .column:nth-of-type(3) .dot:nth-of-type(1) {
-    margin: 25px 25px 0px 0px;
-}
-.cube_face_5 .column:nth-of-type(3) .dot:nth-of-type(2) {
-    margin: 0px 25px 25px 0px;
 }
